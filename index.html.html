@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derrame pleural: línea del tiempo</title>
+<style>
+:root{--bg:#eceffa;--card:#fff;--tx:#1d2140;--mu:#5d6490;--bd:#cfd5ee;--p1:#4f7fd1;--p2:#6568cf;--p3:#8a5fc6;--ok:#2f8f6b;--bad:#c2527a;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141830;--card:#1d2342;--tx:#e9ebfb;--mu:#a3abd6;--bd:#333b69;--p1:#6f9ae6;--p2:#8588e6;--p3:#a782dc;--ok:#5cc9a0;--bad:#e585a9;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141830;--card:#1d2342;--tx:#e9ebfb;--mu:#a3abd6;--bd:#333b69;--p1:#6f9ae6;--p2:#8588e6;--p3:#a782dc;--ok:#5cc9a0;--bad:#e585a9;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:0 14px 90px}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 10px) 0 8px}
+h1{font-size:1.1rem;margin:0 0 8px}
+.jump{display:flex;gap:6px;overflow-x:auto}
+.jb{flex:none;border:1.5px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:5px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+.pb{height:5px;background:var(--bd);border-radius:5px;margin-top:8px;overflow:hidden}
+.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p3));transition:width .3s}
+.hint{font-size:.8rem;color:var(--mu);margin:8px 0 0}
+.tl{position:relative;padding-left:46px}
+.tl::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:4px;border-radius:4px;background:linear-gradient(var(--p1),var(--p2),var(--p3))}
+.ph1{--c:var(--p1)}.ph2{--c:var(--p2)}.ph3,.ph4{--c:var(--p3)}
+.phh{font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c);margin:18px 0 8px}
+.it{position:relative;margin:0 0 10px;scroll-margin-top:110px}
+.dt{position:absolute;left:-46px;top:8px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:3px solid var(--c);color:var(--c);font-weight:700;z-index:1}
+.it.sn .dt,.it.op .dt{background:var(--c);color:#fff}
+.it.op .dt{box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 25%,transparent)}
+.bd{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--c);border-radius:12px}
+.hd{display:block;width:100%;text-align:left;border:0;background:none;color:var(--tx);font:inherit;padding:11px 14px;cursor:pointer}
+.sm{display:block;font-size:.84rem;color:var(--mu)}
+.ct{padding:0 14px 14px}
+.cite{color:var(--mu);font-size:.8rem;margin-top:12px}
+.btn{border:0;border-radius:10px;padding:9px 15px;font:inherit;cursor:pointer;background:var(--c);color:#fff}
+.btn.g{background:none;color:var(--c);border:1.5px solid var(--c)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.box{background:color-mix(in srgb,var(--c) 13%,transparent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:.93rem}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:.88rem;overflow-x:auto;white-space:nowrap}
+.g{border-bottom:1.5px dotted var(--c);cursor:help}
+.chip{display:inline-block;background:color-mix(in srgb,var(--c) 18%,transparent);border-radius:999px;padding:3px 10px;font-size:.84rem;margin:3px 3px 0 0}
+.cb{border:1.5px solid var(--bd);background:none;color:var(--tx);border-radius:999px;padding:5px 11px;font:inherit;font-size:.85rem;cursor:pointer;margin:3px 3px 0 0}
+.cb.act{background:var(--c);border-color:var(--c);color:#fff}
+input[type=range]{width:100%;accent-color:var(--c)}
+.st{font-weight:700;margin:6px 0}.st.ok{color:var(--ok)}.st.bad{color:var(--bad)}.st.l{color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.m{border:1.5px solid var(--bd);background:none;color:var(--tx);border-radius:12px;padding:9px;text-align:left;font:inherit;font-size:.9rem;cursor:pointer}
+.m small{display:block;color:var(--c);font-weight:700}
+.m.act{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c)}
+.bars div{height:14px;border-radius:8px;background:var(--bd);margin:3px 0 8px;overflow:hidden}
+.bars i{display:block;height:100%;transition:width .35s}
+ul.ls{margin:8px 0;padding-left:20px}
+.ref{padding-left:2em;text-indent:-2em}
+#gl{display:none;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:560px;margin:auto;background:var(--card);border:1.5px solid var(--p2);border-radius:12px;padding:12px 40px 12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:20;font-size:.93rem}
+#gl .x{position:absolute;right:8px;top:8px;border:0;background:none;color:var(--mu);font-size:1rem;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><h1>🫁 Derrame pleural · línea del tiempo</h1><div class="jump" id="jump"></div><div class="pb"><i id="pbi"></i></div><div class="hint" id="ph"></div></div>
+<div class="tl" id="tl"></div>
+</main>
+<div id="gl"></div>
+<script>
+var T='(Krishna et al., 2025)',op=-1,seen={},st={kind:0,tab:0,cz:-1,m:-1,vol:0};
+var GL={'pleura visceral':'Hoja interna de la pleura, la que recubre el pulmón.','pleura parietal':'Hoja externa de la pleura, la que reviste la pared del tórax. En ella están los estomas por donde drenan los linfáticos.','hemitórax':'Cada una de las dos mitades del tórax (derecha o izquierda).','trasudado':'Líquido que se acumula por factores sistémicos (presiones alteradas) mientras la pleura sigue íntegra.','exudado':'Líquido que se acumula por daño o alteración local de la pleura o de sus vasos; contiene más proteínas y células.','LDH':'Lactato deshidrogenasa: enzima que se libera cuando hay daño celular.','presión hidrostática':'Presión que ejerce la sangre sobre las paredes de los capilares; empuja líquido hacia afuera.','presión oncótica':'Presión que generan las proteínas (sobre todo la albúmina) y que retiene el agua dentro de los vasos.','hipoalbuminemia':'Nivel bajo de albúmina en la sangre.','permeabilidad':'Facilidad con la que un vaso deja pasar líquido y proteínas.','VEGF':'Factor de crecimiento del endotelio vascular: molécula que aumenta la permeabilidad de los vasos.','linfáticos':'Vasos que recogen el líquido sobrante de los tejidos y lo devuelven a la sangre.','estomas':'Pequeñas aberturas de la pleura parietal por donde entra el líquido al sistema linfático.','atelectasia':'Colapso de una parte del pulmón.','ascitis':'Líquido acumulado en la cavidad del abdomen (peritoneo).','Kf':'Coeficiente de filtración: qué tan fácil filtra líquido la pared capilar.','Pcap':'Presión hidrostática dentro del capilar.','Ppl':'Presión en el espacio pleural.','σ':'Coeficiente de reflexión: qué tan bien retiene la pared las proteínas.','πcap':'Presión oncótica dentro del capilar.','πpl':'Presión oncótica del líquido pleural.','empiema':'Pus en el espacio pleural.','quilotórax':'Linfa (quilo) acumulada en el espacio pleural.','hemotórax':'Sangre acumulada en el espacio pleural.','CABG':'Cirugía de derivación (bypass) de arterias coronarias.'};
+function $(i){return document.getElementById(i)}
+function g(k,l){return '<span class="g" onclick="gd(\''+k+'\')">'+(l||k)+'</span>'}
+function gd(k){$('gl').innerHTML='<b>'+k+'</b><br>'+GL[k]+'<button class="x" onclick="$(\'gl\').style.display=\'none\'">✕</button>';$('gl').style.display='block'}
+document.addEventListener('click',function(e){if(!e.target.closest('.g')&&!e.target.closest('#gl'))$('gl').style.display='none'});
+var CZ=[['T','Insuficiencia cardíaca','Aumenta la '+g('presión hidrostática')+' capilar; es la causa de trasudado más frecuente.'],['T','Síndrome nefrótico','Baja la '+g('presión oncótica')+' por '+g('hipoalbuminemia')+'.'],['T','Cirrosis hepática','Hipoalbuminemia y paso de '+g('ascitis')+' por el diafragma (hidrotórax hepático).'],['T','Hipoalbuminemia','Reduce la fuerza de retención intravascular y favorece la salida pasiva de líquido.'],['T','Diálisis peritoneal','Causa común de trasudado.'],['E','Neumonía','Infección pulmonar; incluye el derrame paraneumónico y el '+g('empiema')+'.'],['E','Tuberculosis','Infección pulmonar (tuberculosis pleural).'],['E','Neoplasias malignas','Cáncer de pulmón, mama, linfoma, mesotelioma.'],['E','Pancreatitis','Trastorno inflamatorio.'],['E','Lupus','Trastorno inflamatorio autoinmune.'],['E','Artritis reumatoide','Trastorno inflamatorio autoinmune.'],['E','Síndrome post-lesión cardíaca','Causa común de exudado.'],['E','Quilotórax','Linfa en el espacio pleural; '+g('quilotórax','ver definición')+'.'],['E','Hemotórax','Sangre en el espacio pleural; '+g('hemotórax','ver definición')+'.'],['E','Post-CABG','Después de una cirugía de derivación coronaria ('+g('CABG')+').'],['E','Asbesto (benigno)','Derrame pleural benigno por asbesto.'],['R','Embolia pulmonar','Puede ser exudativa o trasudativa.'],['R','Fármacos','Exudativa. Asociados: metotrexato, amiodarona, fenitoína y dasatinib.'],['R','Radioterapia','Exudativa.'],['R','Rotura esofágica','Exudativa.'],['R','Hiperestimulación ovárica','Síndrome de hiperestimulación ovárica; exudativo.']];
+function czh(k){var h='<div>';CZ.forEach(function(c,i){if(c[0]==k)h+='<button class="cb'+(st.cz==i?' act':'')+'" onclick="st.cz='+i+';rc()">'+c[1]+'</button>'});var c=CZ[st.cz];return h+'</div><div class="box">'+(c&&c[0]==k?'<b>'+c[1]+'</b><br>'+c[2]:'Toca una causa para ver por qué ocurre.')+'</div>'}
+var MM=[['Pcap ↑','↑ Presión hidrostática capilar','Aumenta la filtración transvascular hacia el espacio pleural.','Insuficiencia cardíaca congestiva, pericarditis constrictiva.','f'],['πcap ↓','↓ Presión oncótica microvascular','La '+g('hipoalbuminemia')+' marcada reduce la fuerza de retención intravascular y favorece la salida pasiva de trasudado.','Síndrome nefrótico, cirrosis hepática, malnutrición severa.','f'],['σ / Kf ↑','↑ Permeabilidad microvascular','Citocinas, '+g('VEGF')+' e histamina separan las uniones endoteliales: pasan proteínas y células al espacio pleural (exudado).','Procesos inflamatorios, infecciosos o tumorales.','f'],['Drenaje ↓','Obstrucción del drenaje linfático','Tumores mediastínicos, linfomas o fibrosis bloquean los '+g('estomas')+' de la pleura parietal e impiden reabsorber proteínas y líquido.','Tumores mediastínicos, linfomas, fibrosis.','d'],['Ppl más negativa','↑ Presión negativa intrapleural','Una '+g('atelectasia')+' pulmonar masiva genera un gradiente de succión elevado que atrae líquido hacia la cavidad.','Atelectasia pulmonar masiva.','f'],['Peritoneo','Paso transdiafragmático','Defectos microscópicos del hemidiafragma permiten el paso de '+g('ascitis')+' hacia el tórax.','Hidrotórax hepático.','f']];
+var N=[
+{p:0,t:'¿Qué es un derrame pleural?',s:'Líquido de más entre las dos hojas de la pleura.',
+ b:function(){return '<p>Es la <b>acumulación patológica de líquido</b> en el espacio pleural, entre la '+g('pleura visceral')+' y la '+g('pleura parietal')+', por encima del volumen fisiológico de lubricación.</p><svg viewBox="0 0 200 140" width="100%" style="max-height:200px"><rect x="35" y="8" width="130" height="124" rx="18" fill="none" stroke="var(--c)" stroke-width="3"/><ellipse cx="100" cy="64" rx="48" ry="50" fill="color-mix(in srgb,var(--c) 20%,transparent)" stroke="var(--c)" stroke-width="2" stroke-dasharray="4 3"/><clipPath id="cp"><rect x="36" y="9" width="128" height="122" rx="17"/></clipPath><rect id="fl" x="36" y="131" width="128" height="0" fill="var(--p3)" opacity=".6" clip-path="url(#cp)"/></svg><input type="range" id="sl" min="0" max="500" step="5" value="'+st.vol+'" oninput="u0()"><div class="sm">Mueve el control. Volumen en un '+g('hemitórax')+': <b id="vv"></b> mL</div><div id="zs" class="st"></div><span class="chip">Normal: 0,1–0,3 mL/kg</span><span class="chip">≈ 10–20 mL por hemitórax</span>'},i:function(){u0()}},
+{p:1,t:'Dos tipos: trasudado y exudado',s:'Se distinguen por el origen del líquido.',
+ b:function(){var e=st.kind,n=e?30:6,d='';for(var i=0;i<n;i++)d+='<circle cx="'+(42+(i*53)%116)+'" cy="'+(64+(i*29)%40)+'" r="2.3" fill="var(--p3)"/>';
+  return '<div class="row" style="margin:0 0 8px"><button class="btn'+(e?' g':'')+'" onclick="st.kind=0;rc()">Trasudado</button><button class="btn'+(e?'':' g')+'" onclick="st.kind=1;rc()">Exudado</button></div><svg viewBox="0 0 200 120" width="100%" style="max-height:190px"><rect x="30" y="8" width="140" height="104" rx="16" fill="none" stroke="var(--c)" stroke-width="3"'+(e?' stroke-dasharray="6 4"':'')+'/><rect x="32" y="58" width="136" height="52" rx="14" fill="color-mix(in srgb,var(--c) 22%,transparent)"/>'+d+'</svg><div class="sm">● proteínas y células (ilustrativo). Línea punteada = pleura alterada.</div><div class="box">'+(e?'<b>'+g('exudado','Exudado')+':</b> daño o alteración local de la pleura o de sus vasos (mayor '+g('permeabilidad')+').':'<b>'+g('trasudado','Trasudado')+':</b> factores sistémicos alterados ('+g('presión hidrostática')+' u '+g('presión oncótica','oncótica')+'); la pleura está íntegra.')+'</div>'}},
+{p:1,t:'¿Cómo se distinguen?',s:'Criterios de Light y de Heffner.',
+ b:function(){var l=st.tab==0;return '<div class="row" style="margin:0 0 6px"><button class="btn'+(l?'':' g')+'" onclick="st.tab=0;rc()">Light</button><button class="btn'+(l?' g':'')+'" onclick="st.tab=1;rc()">Heffner</button></div><p>'+(l?'Los criterios de Light son el estándar de referencia. Es <b>exudado</b> si cumple uno o más:':'Los criterios de Heffner son una modificación de Light. Es <b>exudado</b> si cumple uno o más:')+'</p><ul class="ls">'+(l?'<li>Proteína pleural / proteína sérica &gt; <b>0,5</b></li><li>'+g('LDH')+' pleural / LDH sérica &gt; <b>0,6</b></li><li>LDH pleural &gt; <b>2/3</b> del límite superior normal sérico</li>':'<li>Proteínas del líquido pleural &gt; <b>2,9 g/dL</b></li><li>Colesterol del líquido pleural &gt; <b>45 mg/dL</b></li><li>LDH pleural &gt; <b>2/3</b> del límite superior normal sérico</li>')+'</ul><div class="box">Si no cumple ninguno, es '+g('trasudado')+'.</div>'}},
+{p:1,t:'Causas del trasudado',s:'Cambian las presiones, la pleura está sana.',b:function(){return '<p>Alteran las presiones '+g('presión hidrostática','hidrostática')+' u '+g('presión oncótica','oncótica')+'.</p>'+czh('T')}},
+{p:1,t:'Causas del exudado',s:'Daño local de la pleura o de sus vasos.',b:function(){return czh('E')}},
+{p:1,t:'Causas menos frecuentes',s:'Incluye fármacos asociados.',b:function(){return czh('R')}},
+{p:2,t:'La ecuación de Starling',s:'Qué mueve el líquido hacia la pleura.',
+ b:function(){return '<p>El líquido pleural se mueve según la <b>ecuación de Starling</b> y se drena por los '+g('linfáticos')+' de la pleura parietal.</p><div class="box eq">Q = '+g('Kf')+' · [('+g('Pcap')+' − '+g('Ppl')+') − '+g('σ')+'('+g('πcap')+' − '+g('πpl')+')]</div><p><b>Hay derrame cuando se forma más líquido del que se reabsorbe.</b> La reabsorción linfática puede multiplicarse hasta 20 veces ante sobrecargas.</p>'}},
+{p:2,t:'Seis mecanismos',s:'Seis formas de romper el equilibrio.',
+ b:function(){var m=st.m,f=20,c=60;if(m>=0){if(MM[m][4]=='f')f=85;else c=15}
+  return '<p>Toca un mecanismo y mira la balanza:</p><div class="grid">'+MM.map(function(x,i){return '<button class="m'+(m==i?' act':'')+'" onclick="st.m='+i+';rc()"><small>'+x[0]+'</small>'+x[1]+'</button>'}).join('')+'</div><div class="bars" style="margin-top:10px"><span class="sm">Formación de líquido</span><div><i style="width:'+f+'%;background:var(--p3)"></i></div><span class="sm">Reabsorción linfática</span><div><i style="width:'+c+'%;background:var(--p1)"></i></div></div><div class="st '+(f>c?'bad':'ok')+'">'+(f>c?'Se forma más líquido del que se reabsorbe: derrame':'Equilibrio: sin derrame')+'</div>'+(m>=0?'<div class="box"><b>'+MM[m][1]+'</b><br>'+MM[m][2]+'<br><b>Ejemplo:</b> '+MM[m][3]+'</div>':'')+'<p class="sm">Valores de la balanza ilustrativos.</p>'}},
+{p:3,t:'Referencia',s:'Fuente de toda la información.',
+ b:function(){return '<p class="ref">Krishna, R., Antoine, M. H., Alahmadi, M. H., &amp; Rudrappa, M. (2025). <i>Pleural effusion</i>. StatPearls Publishing, Treasure Island.</p><p class="sm">Los términos subrayados llevan definiciones generales de apoyo.</p>'}}
+];
+var PH=['Fase 1 · Definición','Fase 2 · Etiología','Fase 3 · Mecanismo fisiopatológico','Fuente'];
+function u0(){var v=+$('sl').value;st.vol=v;$('vv').textContent=v;var h=Math.sqrt(v/500)*122;$('fl').setAttribute('y',131-h);$('fl').setAttribute('height',h);var z=v<10?['Por debajo del volumen habitual','l']:v<=20?['Volumen fisiológico: lubricación normal','ok']:['Patológico: derrame pleural','bad'];$('zs').textContent=z[0];$('zs').className='st '+z[1]}
+function body(i){return N[i].b()+(i==8?'':'<div class="cite">'+T+'</div>')+(i<N.length-1?'<div class="row"><button class="btn" onclick="go('+(i+1)+')">Siguiente: '+N[i+1].t+' ↓</button></div>':'')}
+function rc(){$('ct'+op).innerHTML=body(op);if(N[op].i)N[op].i()}
+function render(){var h='',lp=-1;N.forEach(function(n,i){if(n.p!=lp){lp=n.p;h+='<div class="phh ph'+(n.p+1)+'">'+PH[n.p]+'</div>'}
+ h+='<div class="it ph'+(n.p+1)+(op==i?' op':'')+(seen[i]?' sn':'')+'" id="n'+i+'"><div class="dt">'+(seen[i]&&op!=i?'✓':i+1)+'</div><div class="bd"><button class="hd" onclick="tg('+i+')"><b>'+n.t+'</b><span class="sm">'+n.s+'</span></button>'+(op==i?'<div class="ct" id="ct'+i+'"></div>':'')+'</div></div>'});
+ $('tl').innerHTML=h;if(op>=0){rc();$('n'+op).scrollIntoView({behavior:'smooth',block:'start'})}
+ var c=Object.keys(seen).length;$('pbi').style.width=(c/N.length*100)+'%';$('ph').textContent='Recorrido: '+c+' de '+N.length+' paradas · toca los términos subrayados para ver su definición'}
+function tg(i){op=op==i?-1:i;if(op>=0)seen[op]=1;render()}
+function go(i){op=i;seen[i]=1;render()}
+$('jump').innerHTML=[['Definición',0],['Etiología',1],['Mecanismo',6],['Referencia',8]].map(function(x){return '<button class="jb" onclick="go('+x[1]+')">'+x[0]+'</button>'}).join('');
+render();
+</script>
+</body>
+</html>
